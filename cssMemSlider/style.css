@@ -7,15 +7,61 @@
 
 body {
   font-family: "Macondo", serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: #000000;
+  color: #bdae82;
 }
 
 .container {
-  width: 70vw;
-  margin: 0 auto;
+  display: grid;
+  width: 60vw;
+  margin: 5vh auto;
+  grid-template-areas: 
+    "images images"
+    "texts buttons";
 }
 
-p {
-  color: #bdae82;
+input {
+  display: none;
+}
+
+.images {
+  /* margin-top: 5vh; */
+  grid-area: images;
+}
+
+img {
+  width: 100%;
+}
+
+.image {
+  display: none;
+}
+
+.image.active { 
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-radius: 1rem;
+}
+
+.img-wrapper {
+  width: 60vw;
+  overflow: hidden;
+}
+
+.texts {
+  grid-area: texts;
+}
+
+.text {
+  display: none;
+}
+
+.text.active {
+display: block;
+}
+
+.buttons {
+  grid-area: buttons;
 }
