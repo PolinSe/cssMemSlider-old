@@ -26,7 +26,6 @@ input {
 }
 
 .images {
-  /* margin-top: 5vh; */
   grid-area: images;
 }
 
@@ -63,5 +62,45 @@ display: block;
 }
 
 .buttons {
+  display: flex;
+  justify-content: end;
+  gap: 0.3rem;
   grid-area: buttons;
+}
+
+.button {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 0.1rem solid #bdae82;
+  background-color: #bdae82;
+  transition: 0.5s;
+}
+
+.label {
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.label:hover .button {
+  background-color: #ffffff;
+  border: 0.1rem solid #ffffff;
+}
+
+.label:active .button {
+  background-color: rgba(190, 175, 138, 0.253);
+  border: 0.1rem solid rgba(190, 175, 138, 0.253);
+}
+
+#r1:checked~.buttons>.label1>.button {
+  background-color: transparent;
+}
+#r2:checked~.buttons>.label2>.button {
+  background-color: transparent;
+}
+#r3:checked~.buttons>.label3>.button {
+  background-color: transparent;
+}
+#r4:checked~.buttons>.label4>.button {
+  background-color: transparent;
 }
