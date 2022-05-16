@@ -7,7 +7,7 @@
 
 body {
   font-family: "Macondo", serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   background-color: #000000;
   color: #bdae82;
 }
@@ -29,7 +29,6 @@ input {
   width: 60vw;
   grid-area: images;
   overflow: hidden;
-  
 }
 
 img {
@@ -41,26 +40,27 @@ img {
   width: 25%;
   padding: 0;
   margin: 0;
-  border-radius: 1rem;
 }
 
 .img-wrapper {
   display: flex;
-  flex-wrap: nowrap;
   width: 400%;
   transition: 0.5s;
 }
 
 .texts {
+  height: 5vh;
   grid-area: texts;
+  overflow: hidden;
+}
+
+.text-wrapper {
+  height: 5.1vh;
+  transition: 0.5s;
 }
 
 .text {
-  display: none;
-}
-
-.text.active {
-display: block;
+height: 100%;
 }
 
 .buttons {
@@ -120,3 +120,38 @@ display: block;
   transform: translateX(-75%);
 }
 
+#r1:checked~.texts>.text-wrapper.active {
+  transform: translateY(0);
+}
+#r2:checked~.texts>.text-wrapper.active {
+  transform: translateY(-100%);
+}
+#r3:checked~.texts>.text-wrapper.active {
+  transform: translateY(-200%);
+}
+#r4:checked~.texts>.text-wrapper.active {
+  transform: translateY(-300%);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
+  .button {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .buttons {
+    gap: 0.1rem;
+  }
+}
+
+@media (max-width: 540px) {
+  body {
+    font-size: 1rem;
+  }
+  .button {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
