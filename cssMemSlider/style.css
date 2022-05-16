@@ -26,27 +26,29 @@ input {
 }
 
 .images {
+  width: 60vw;
   grid-area: images;
+  overflow: hidden;
+  
 }
 
 img {
   width: 100%;
 }
 
-.image {
-  display: none;
-}
-
-.image.active { 
+.image { 
   display: block;
+  width: 25%;
   padding: 0;
   margin: 0;
   border-radius: 1rem;
 }
 
 .img-wrapper {
-  width: 60vw;
-  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 400%;
+  transition: 0.5s;
 }
 
 .texts {
@@ -104,3 +106,17 @@ display: block;
 #r4:checked~.buttons>.label4>.button {
   background-color: transparent;
 }
+
+#r1:checked~.images>.img-wrapper.active {
+  transform: translateX(0);
+}
+#r2:checked~.images>.img-wrapper.active {
+  transform: translateX(-25%);
+}
+#r3:checked~.images>.img-wrapper.active {
+  transform: translateX(-50%);
+}
+#r4:checked~.images>.img-wrapper.active {
+  transform: translateX(-75%);
+}
+
